@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="form" onsubmit="submitForm(); return false">
+        <p class="title">GAMEINFLUENCER MARKETING CAMPAIGN</p><br>
+        <label>Campaign name</label><br>
+        <input id="campaign-name" type="text" maxlength="20" required><br>
+
+        <label>Campaign description</label><br>
+        <textarea id="campaign-description" rows="5" maxlength="200" required></textarea><br>
+
+        <label>Campaign game</label><br>
+        <select id = "select-games" onchange="addField()" required>
+            <option>League of Legends</option>
+            <option>DOTA 2</option>
+            <option>Minecraft</option>
+            <option>Fortnite</option>
+            <option>Apex Legends</option>
+            <option value="other">Other</option>
+        </select><br>
+        <div id="other-option" style="display: none;">
+            Other game:
+            <input type="text" id="other-game" maxlength="20" style="margin-top: 4px;">
+        </div>
+        
+        <br><label>Campaign language</label><br>
+        <select id = "language" required>
+            <option>English</option>
+            <option>German</option>
+            <option>Spanish</option>
+            <option>Japanese</option>
+        </select><br>
+        
+        <label>Campaign start and end date</label><br>
+        <input id="start-date" class="dates" type="date" onchange="validStartDate()" required>
+        <span class="to">to</span>
+        <input id="end-date" class="dates" type="date" onchange="validEndDate()" required><br>
+
+        <label>Campaign budget (USD$)</label><br>
+        <input id="campaign-budget" type="number" max="10000"><br>
+
+        <label>Can the campaign be paid with Crypto currency?</label><br>
+        <input type="radio" name="crypto" value="yes" required>
+        <label for="yes">yes</label>
+        <input type="radio" name="crypto" value="no" required>
+        <label for="no">no</label><br><br>
+
+        <label id="validation-message">something</label> <br> <br>
+
+        <input id="submit-button" type="submit" onclick="validCampaignName(), validCampaignDescription(), validBudget(), clearLabel()">
+        <div id="completed-forms"></div>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
