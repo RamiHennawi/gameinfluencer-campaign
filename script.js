@@ -91,16 +91,15 @@ function submitForm(){
   var paragraph = document.createElement("p");
   var containerSumbissions = document.getElementById("completed-forms");
   paragraph.innerHTML = "<b> Campaign </b>" + i + "<br />" + "name: " + Submission.campaignName +  "<br />" + 
-  "description: " + Submission.campaignDescription +  "<br />" +
   "game: " + Submission.campaignGame + "<br />" + 
   "language: " + Submission.campaignLanguage + "<br />" +
   "start date: " + Submission.campaignStartDate + "<br />" +
   "end date: " + Submission.campaignEndDate +"<br />" +
-  "budget: " + Submission.campaignBudget + "<br />" +
+  "budget: " + Submission.campaignBudget + " USD" + "<br />" +
   "crypto: " + Submission.campaignCrypto + "<br />";
   containerSumbissions.appendChild(paragraph);
   i++;
-  paragraph.style.marginRight = "10px";
+  paragraph.style.marginRight = "20px";
   
   document.getElementById("form").reset();
   document.getElementById("other-option").style.display = "none";
